@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Mieter</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127160155-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-127160155-1');
+
+    var slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+    </script>
+
+    <meta charSet="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="">
+    <meta property="og:image" content="">
+    <html lang="de">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+
+
+    <style>
+    @media screen and (max-width: 992px) {
+  .slideshow {
+    width: 100% !important;
+  }
+}
+    </style>
+  </head>
+
+  <body class="font-friendly">
+    <div class="gray-white">
+      <!---->
+      <header class="header">
+        <div class="container-lrg">
+          <div class="flex col-12 spread">
+            <a href="/" class="logo primary-color launchaco-builder-hoverable logo">Flatly</a>
+            <a href="#main-menu" id="menu" class="menu-toggle">
+              <b class="nav-link mr0 secondary-color">☰</b>
+            </a>
+            <nav id="main-menu" role="navigation" class="main-menu">
+              <a href="#" id="main-menu-close" class="menu-close">
+                <span class="bold">✕</span>
+              </a>
+              <a href="/mieter" class="nav-link secondary-color">Mieter</a>
+              <a href="/vermieter" class="nav-link secondary-color">Vermieter</a>
+              <a href="mailto:contactflatly@gmail.com" class="nav-link secondary-color">Kontakt</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="khiu" >
+          <div class="slideshow" style="width:50%; float:left" style="padding:10px">
+            <div class="mt40">
+              <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img1.jpeg" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img2.jpeg" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img3.jpeg" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+            </div>
+          </div>
+          <div class="slideshow" style="width:50%; float:right" style="padding:10px">
+            <h1 class="heading primary-color launchaco-builder-hoverable">{{title}}</h1>
+            <h2 class="subheading secondary-color mt20 launchaco-builder-hoverable">von: {{owner}}</h2>
+            <div class="mt40">
+              <p>Preis: {{price}} + {{nebenkosten}} NK </p>
+              <p>Zimmer: {{number_rooms}}</p>
+              <p>Bäder: {{number_baths}}</p>
+              <p>Möberliert: {{furniture}}</p>
+              <p>Balkon: {{balcony}}</p>
+              <p>Parkplatz: {{parking_space}}</p>
+              <p>Haustiere: {{pets_allowed}}</p>
+              <p>Rauchen: {{smoking_allowed}}</p>
+              <p>Lage: {{area}}</p>
+              <p>Beschreibung: {{description}}</p>
+              <p>Verfügbar ab: {{availability}}</p>
+            </div>
+
+          </div>
+        </div>
+        <!---->
+      </section>
+    </div>
+
+  </body>
+
+  <script>
+    window.onscroll = function()
+    {
+      showAd()
+    }
+
+    function showAd()
+    {
+      var scrollBarPosition = window.pageYOffset | document.body.scrollTop;
+
+      // At specifiv position do what you want
+      if (scrollBarPosition > 300)
+      {
+        document.getElementById("visual-dreamer").className = "launchaco-promo launchaco-promo__active";
+        window.onscroll = function() {};
+      }
+    }
+  </script>
+
+</html>
